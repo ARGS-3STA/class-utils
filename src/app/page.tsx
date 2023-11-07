@@ -1,19 +1,15 @@
-"use client";
-
-import { trpc } from "@/trpc/client";
+import { trpcServer } from "@/trpc/serverClient";
 import { Student } from "@prisma/client";
 import { Fragment } from "react";
 
-export default function Home() {
-  const { data } = trpc.group.getAll.useQuery({
+export default async function Home() {
+  const groups = await trpcServer.group.getAll({
     includeStudents: true,
   });
 
-  if (!data) return "Loading....";
-
   return (
     <div>
-      {data.map((group: (typeof data)[number]) => (
+      {groups.map((group: (typeof groups)[number]) => (
         <Fragment key={group.id}>
           <p>Id: {group.id}</p>
           <p>Name: {group.name}</p>
