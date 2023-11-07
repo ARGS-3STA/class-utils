@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@prisma/client": "5.5.2",
-    "@tanstack/react-query": "^5.7.2",
+    "@tanstack/react-query": "^4.18.0",
     "@trpc/client": "^10.43.1",
     "@trpc/react-query": "^10.43.1",
     "@trpc/server": "^10.43.1",
