@@ -18,7 +18,7 @@ export default async function Home() {
             <Fragment key={student.id}>
               <p>Student id: {student.id}</p>
               <p>
-                Student name: {student.firstName} {student.lastName}
+                Student name hihihaha: {student.firstName} {student.lastName}
               </p>
             </Fragment>
           ))}
