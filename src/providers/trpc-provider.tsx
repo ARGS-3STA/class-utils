@@ -17,6 +17,9 @@ export function TRPCProvider({ children }: TRPCProviderProps) {
         httpBatchLink({
           url: "http://localhost:3000/api/trpc",
         }),
+        httpBatchLink({
+          url: "https://klasseverktoy.vercel.app/api/trpc",
+        }),
       ],
     })
   );
