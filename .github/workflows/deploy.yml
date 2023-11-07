@@ -5,8 +5,8 @@ on:
     branches: [main]
 
 jobs:
-  build:
-    name: Build
+  esLint:
+    name: Lint
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build with Next.js
+      - name: Run Linting
         run: |
           echo "Running build..."
           pnpm run build
