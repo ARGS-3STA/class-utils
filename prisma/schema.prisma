@@ -18,7 +18,8 @@ model Group {
 }
 
 model Student {
-  id     String  @id @default(uuid())
-  name   String
-  groups Group[]
+  id        String  @id @default(uuid())
+  firstName String
+  lastName  String
+  groups    Group[]
 }
