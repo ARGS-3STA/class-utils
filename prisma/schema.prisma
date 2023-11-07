@@ -11,8 +11,15 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model Group {
+  id       String    @id @default(uuid())
+  name     String
+  students Student[]
+}
+
+model Student {
+  id      String @id @default(uuid())
+  name    String
+  group   Group  @relation(fields: [groupId], references: [id])
+  groupId String
 }
