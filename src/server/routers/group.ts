@@ -32,4 +32,17 @@ export const groupRouter = router({
         },
       });
     }),
+  findByName: publicProcedure
+    .input(
+      z.object({
+        name: z.string(),
+      })
+    )
+    .query(async function ({ input }) {
+      return await prisma.group.findMany({
+        where: {
+          name: sanitizeNameString(input.name),
+        },
+      });
+    }),
 });
