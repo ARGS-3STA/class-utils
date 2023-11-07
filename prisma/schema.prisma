@@ -18,8 +18,7 @@ model Group {
 }
 
 model Student {
-  id      String @id @default(uuid())
-  name    String
-  group   Group  @relation(fields: [groupId], references: [id])
-  groupId String
+  id     String  @id @default(uuid())
+  name   String
+  groups Group[]
 }
