@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Linting
         run: |
-          echo "Running build..."
-          pnpm run build
+          echo "Running lint..."
+          pnpm run lint
         env:
           CI: true
