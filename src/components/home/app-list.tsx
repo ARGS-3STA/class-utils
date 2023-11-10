@@ -6,17 +6,20 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
+import Image from "next/image";
 
 const apps = [
   {
-    name: "Test App",
-    tag: "Test Tag",
-    url: "/test-app",
+    name: "Gruppe generator",
+    tag: "Verktøy",
+    url: "/group-generator",
+    imageURL: "/app-images/empty.png",
   },
   {
-    name: "App numero dos",
-    tag: "Tag de 2",
-    url: "/test-app-2",
+    name: "ARGS Timeplan",
+    tag: "timeplan",
+    url: "https://argstimeplan.pythonanywhere.com/",
+    imageURL: "/app-images/timetable.png",
   },
 ];
 
@@ -31,7 +34,7 @@ export function AppList({ filterQuery }: AppListProps) {
 
   return (
     <div className="flex flex-col gap-8 xl:grid xl:grid-cols-4">
-      {filteredApps.map(({ name, tag, url }) => (
+      {filteredApps.map(({ name, tag, url, imageURL }) => (
         <Card key={url}>
           <CardHeader>
             <CardDescription>{tag}</CardDescription>
@@ -39,9 +42,7 @@ export function AppList({ filterQuery }: AppListProps) {
           </CardHeader>
           <CardContent>
             <Link href={url} className="cursor-pointer">
-              <div className="bg-gray-200 h-40 relative flex items-center justify-center">
-                <p className="text-2xl">Placeholder</p>
-              </div>
+              <Image src={imageURL} width={316} height={160} alt="Image" />
             </Link>
           </CardContent>
         </Card>
