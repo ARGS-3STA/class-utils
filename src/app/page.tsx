@@ -1,13 +1,17 @@
+"use client";
+
 import { trpcServer } from "@/trpc/serverClient";
 import { Student } from "@prisma/client";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import Toolbar from "@/components/layout/Toolbar";
 import AppGrid from "@/components/home/AppGrid";
 
-export default async function Home() {
+export default function Home() {
+  const [menuActive, setMenuActive] = useState(false);
+
   return (
     <div className=" w-screen h-screen">
-      <Toolbar></Toolbar>
+      <Toolbar menuActive={menuActive} setMenuActive={setMenuActive}></Toolbar>
       <AppGrid></AppGrid>
     </div>
   );
