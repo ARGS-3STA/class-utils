@@ -1,9 +1,9 @@
-import React, { Fragment, useRef } from "react";
-import { Menu } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { useDimensions } from "@/hooks/use-dimensions";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { useDimensions } from "@/components/layout/use-dimensions";
+import { Menu } from "lucide-react";
+import { useRef } from "react";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -44,8 +44,7 @@ export default function Toolbar({ menuActive, setMenuActive }: ToolBarProps) {
       initial={false}
       animate={menuActive ? "open" : "closed"}
       custom={height}
-      ref={containerRef}
-    >
+      ref={containerRef}>
       <div className="w-full h-32 flex justify-between items-center">
         <Menu
           className={cn("w-12 h-12 ml-5 z-20", {
@@ -65,8 +64,7 @@ export default function Toolbar({ menuActive, setMenuActive }: ToolBarProps) {
       <motion.div
         id="menu-blur"
         className="absolute top-0 left-0 bottom-0 w-screen blur-2xl bg-white"
-        variants={screenBlur}
-      ></motion.div>
+        variants={screenBlur}></motion.div>
       <Separator className="h-1" />
     </motion.nav>
   );
