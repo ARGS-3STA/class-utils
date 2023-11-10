@@ -17,7 +17,7 @@ const apps = [
   },
   {
     name: "ARGS Timeplan",
-    tag: "timeplan",
+    tag: "Timeplan",
     url: "https://argstimeplan.pythonanywhere.com/",
     imageURL: "/app-images/timetable.png",
   },

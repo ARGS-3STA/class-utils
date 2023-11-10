@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
 import { useRef } from "react";
+import Link from "next/link";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -56,7 +57,9 @@ export default function Toolbar({ menuActive, setMenuActive }: ToolBarProps) {
             setMenuActive(!menuActive);
           }}
         />
-        <h1 className="font-extrabold text-[32px] uppercase">Klasseverktøy!</h1>
+        <h1 className="font-extrabold text-[32px] uppercase">
+          <Link href="/">Klasseverktøy!</Link>
+        </h1>
         <div className="w-7 h-32 bg-green-300" />
       </div>
       <motion.div
