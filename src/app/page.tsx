@@ -1,8 +1,17 @@
 import { trpcServer } from "@/trpc/serverClient";
 import { Student } from "@prisma/client";
 import { Fragment } from "react";
+import Toolbar from "@/components/layout/Toolbar";
+import AppGrid from "@/components/home/AppGrid";
 
 export default async function Home() {
+  return (
+    <div className=" w-screen h-screen">
+      <Toolbar></Toolbar>
+      <AppGrid></AppGrid>
+    </div>
+  );
+  /*
   const groups = await trpcServer.group.getAll({
     includeStudents: true,
   });
@@ -26,4 +35,5 @@ export default async function Home() {
       ))}
     </div>
   );
+  */
 }
