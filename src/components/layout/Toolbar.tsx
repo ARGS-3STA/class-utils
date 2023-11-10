@@ -25,6 +25,11 @@ const sidebar = {
   },
 };
 
+const screenBlur = {
+  open: (height = 1000) => ({ opacity: "1" }),
+  closed: { opacity: "0" },
+};
+
 type ToolBarProps = {
   menuActive: boolean;
   setMenuActive: (state: boolean) => void;
@@ -43,7 +48,7 @@ export default function Toolbar({ menuActive, setMenuActive }: ToolBarProps) {
     >
       <div className="w-full h-32 flex justify-between items-center">
         <Menu
-          className={cn("w-12 h-12 ml-5 z-10", {
+          className={cn("w-12 h-12 ml-5 z-20", {
             "rotate-90": menuActive,
           })}
           onClick={() => {
@@ -54,9 +59,14 @@ export default function Toolbar({ menuActive, setMenuActive }: ToolBarProps) {
         <div className="w-7 h-32 bg-green-300" />
       </div>
       <motion.div
-        className="absolute top-0 left-0 bottom-0 w-[347px] bg-slate-300"
+        className="absolute top-0 left-0 bottom-0 w-[347px] z-10 bg-slate-300"
         variants={sidebar}
       />
+      <motion.div
+        id="menu-blur"
+        className="absolute top-0 left-0 bottom-0 w-screen blur-2xl bg-white"
+        variants={screenBlur}
+      ></motion.div>
       <Separator className="h-1" />
     </motion.nav>
   );
