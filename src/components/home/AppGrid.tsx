@@ -9,7 +9,7 @@ export default function AppGrid() {
   const [filterQuery, setFilterQuery] = useState("");
 
   return (
-    <div className="container">
+    <div className="container mt-10">
       <AppFilter setFilterQuery={setFilterQuery} />
       <Separator className="my-4" />
       <AppList filterQuery={filterQuery} />

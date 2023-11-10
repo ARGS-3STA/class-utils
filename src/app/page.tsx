@@ -1,6 +1,7 @@
 "use client";
 
 import AppGrid from "@/components/home/AppGrid";
+import Toolbar from "@/components/layout/Toolbar";
 import { useState } from "react";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
 
   return (
     <div className=" w-screen h-screen">
-      {/* <Toolbar menuActive={menuActive} setMenuActive={setMenuActive}></Toolbar> */}
+      <Toolbar menuActive={menuActive} setMenuActive={setMenuActive}></Toolbar>
       <AppGrid />
     </div>
   );
