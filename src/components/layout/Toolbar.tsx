@@ -1,9 +1,11 @@
+"use client";
+
 import { Separator } from "@/components/ui/separator";
 import { useDimensions } from "@/hooks/use-dimensions";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 
 const sidebar = {
@@ -32,14 +34,10 @@ const screenBlur = {
   closed: { opacity: "0" },
 };
 
-type ToolBarProps = {
-  menuActive: boolean;
-  setMenuActive: (state: boolean) => void;
-};
-
-export default function Toolbar({ menuActive, setMenuActive }: ToolBarProps) {
+export default function Toolbar() {
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
+  const [menuActive, setMenuActive] = useState(false);
 
   return (
     <motion.nav
