@@ -2,10 +2,14 @@
 
 import React, { createContext, useState } from "react";
 
-type Groups = Array<{ value: string; label: string; numberOfStudents: number }>;
+type Group = {
+  value: string;
+  label: string;
+  numberOfStudents: number;
+};
 
 type GroupContextType = {
-  allGroups: Groups;
+  allGroups: Group[];
   selectedClass: string;
   setSelectedClass: (newClass: string) => void;
 };
@@ -17,8 +21,8 @@ const GroupContext = createContext<GroupContextType>({
 });
 
 type GroupProviderProps = {
-  allGroups: Groups;
-  children: any;
+  allGroups: Group[];
+  children: React.ReactNode;
 };
 
 export function GroupProvider({ allGroups, children }: GroupProviderProps) {
