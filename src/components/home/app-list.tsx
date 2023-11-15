@@ -5,14 +5,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 const apps = [
   {
     name: "Gruppe generator",
     tag: "Verktøy",
-    url: "/group-generator",
+    url: "/gruppe-generator",
     imageURL: "/app-images/empty.png",
   },
   {
